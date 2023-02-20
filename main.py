@@ -1,5 +1,5 @@
 import os
-from my_modules import *
+from resources import getFaces, splitDataset
 
 main_dir = os.getcwd()
 faces_dir = main_dir+'\Faces'
