@@ -14,17 +14,14 @@ def trainModel(X_train_arr, y_train_arr):
     learning_rate = 0.001
     input_dim = (X_train[0].shape)
     output_num = len(np.unique(y_train))
-    max_epochs = 10
+    max_epochs = 15
 
     model = models.Sequential(
         [
-            layers.Dense(units=128, input_shape=input_dim, activation='relu'),
+            layers.Dense(units=256, input_shape=input_dim, activation='relu'),
             layers.Flatten(),
+            layers.Dense(units=128, activation='relu'),
             layers.Dense(units=64, activation='relu'),
-            layers.Dense(units=32, activation='relu'),
-            layers.Dense(units=16, activation='relu'),
-            layers.Dense(units=8, activation='relu'),
-            layers.Dense(units=4, activation='relu'),
             layers.Dense(units=output_num, activation='softmax')
         ]  
     )

@@ -50,8 +50,8 @@ def getFaces(dir):
     for folder in os.listdir():
         os.chdir(folder)
         for img in os.listdir():
-            if (img.split('_')[-1] != '4.pgm' and img.split('_')[-1] != '2.pgm'):
-                # Images are 128 columns by 120 rows
+            # Gets low res images
+            if (img.split('_')[-1] == '4.pgm'):      
                 id = _convertIdtoInt(img.split('_')[0])
                 path_aux = (os.getcwd()+f'\{img}').split('\\')[7:]
                 path = '\\'.join(path_aux)
