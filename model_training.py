@@ -6,15 +6,15 @@ from random import randint
 from sklearn.model_selection import train_test_split
 
 def trainModel(X_train_arr, y_train_arr):
-    seeds = [randint(0, 10000), randint(0, 10000)]
+    rand_seed = randint(0, 10000)
 
-    X_train, X_val, y_train, y_val = train_test_split(X_train_arr, y_train_arr, test_size=0.25, random_state=0)
+    X_train, X_val, y_train, y_val = train_test_split(X_train_arr, y_train_arr, test_size=0.25, random_state=rand_seed)
 
     # Hiperparameters
     learning_rate = 0.001
     input_dim = (X_train[0].shape)
     output_num = len(np.unique(y_train))
-    max_epochs = 15
+    max_epochs = 25
 
     model = models.Sequential(
         [
